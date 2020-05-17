@@ -25,4 +25,4 @@ def homepage():
 app.run(debug=True)
 ```
 
-- [Proximo](.Static-Files.md)
+- [Proximo](./Static-Files.md)
