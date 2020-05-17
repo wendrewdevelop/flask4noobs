@@ -17,7 +17,7 @@
 - 2.3 [Static Files](./src/Começo/Static-Files.md)
 - 2.4 [HTTP Methods](./src/Começo/HTTP-Methods.md)
 - 2.5 [Redirects and Errors](./src/Começo/Redirects-and-Errors.md)
-- 2.6 [File Uploads](src\Começo\File-Uploads.md)
+- 2.6 [File Uploads](./src/Começo/File-Uploads.md)
 
 # Contribuições
 
