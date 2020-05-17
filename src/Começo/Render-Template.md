@@ -3,9 +3,9 @@
 </p>
 
 # Render Template
-### Gerar html dentro de python não é legal, Por isso o flask configura o **jinja2 Mecanismo de template** para você...
-### Renderizar um html. você pode utilizar o metodo **render_template()**.
-### O Flask ira olhar a pasta **templates/**.
+##### Gerar html dentro de python não é legal, Por isso o flask configura o **jinja2 Mecanismo de template** para você...
+##### Renderizar um html. você pode utilizar o metodo **render_template()**.
+##### O Flask ira olhar a pasta **templates/**.
 
 ```
 /<nome_do_seu_arquivo>.py
@@ -24,3 +24,5 @@ def homepage():
 
 app.run(debug=True)
 ```
+
+- [Proximo](.Static-Files.md)
