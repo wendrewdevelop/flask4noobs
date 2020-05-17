@@ -21,7 +21,7 @@
 
 # Contribuições
 
-1. Forke esse repo.
+1. Forke esse repositório.
 2. Crie uma branch com sua feature(``git checkout -b <branch name>``).
 3. Faça o commit(``git commit -m "commit_name"``).
 4. Faça o push(``git push origin branch_name``).
