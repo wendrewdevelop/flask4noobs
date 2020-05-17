@@ -3,9 +3,8 @@
 </p>
 
 # flask4noobs
->
+> Flask4noobs
 
-# Roadmap
 ## Introdução
 
 - 1.1 [Historia](./src/Introdução/Historia.md)
@@ -17,6 +16,6 @@
 - 2.2 [Render_Template](./src/Começo/Render-Template.md)
 
 # Autores
-**Gustavo Lins** Twitter, Github
+**Gustavo Lins** [Github](https://github.com/freazesss/), [Twitter](https://twitter.com/freazesss)
 
 ##### Feito com o 💜
