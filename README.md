@@ -1,23 +1,15 @@
 <p align="center">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTVGrRyh-Q55ckT98qshfXU3Fmh7-F_HD7WBSetZkwgqQKU7RW2&usqp=CAU">
+  <img src="https://miro.medium.com/max/6000/1*Ou6FFJJD3zhcIUU8wBZqIw.png" width="500">
 </p>
 
 # flask4noobs
-> Documentação do flask traduzida para PTBR.
+> :memo: Documentação do flask traduzida para PTBR.
 
-# Introdução
+# Conteúdo
 
-- 1.1 [Historia](./src/Introdução/Historia.md)
-- 1.2 [Instalação](./src/Introdução/Instalação.md)
-
-# Começo
-
-- 2.1 [Hello World](./src/Começo/Hello-World.md)
-- 2.2 [Render Template](./src/Começo/Render-Template.md)
-- 2.3 [Static Files](./src/Começo/Static-Files.md)
-- 2.4 [HTTP Methods](./src/Começo/HTTP-Methods.md)
-- 2.5 [Redirects and Errors](./src/Começo/Redirects-and-Errors.md)
-- 2.6 [File Uploads](./src/Começo/File-Uploads.md)
+- 📖 [Historia](./src/Conteudo/Historia.md)
+  - 📦 [Instalação](./src/Conteudo/Instalação.md)
+  - 👨‍💻 [Mão na masssa](./src/Conteudo/Start.md)
 
 # Contribuições
 
