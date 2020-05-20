@@ -5,11 +5,11 @@
 # Começo
 
 - 2.1 [Hello World](#hello-world)
-- 2.2 [Render Template](#render-template.md)
-- 2.3 [Static Files](#static-files.md)
-- 2.4 [HTTP Methods](#http-methods.md)
-- 2.5 [Redirects and Errors](#redirects-and-errors.md)
-- 2.6 [File Uploads](#file-uploads.md)
+- 2.2 [Render Template](#render-template)
+- 2.3 [Static Files](#static-files)
+- 2.4 [HTTP Methods](#http-methods)
+- 2.5 [Redirects and Errors](#redirects-and-errors)
+- 2.6 [File Uploads](#file-uploads)
 
 
 # Hello World
