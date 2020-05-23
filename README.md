@@ -9,7 +9,11 @@
 
 - 📖 [Historia](./src/Conteudo/Historia.md)
   - 📦 [Instalação](./src/Conteudo/Instalação.md)
+    - Vamos configurar sua maquina. Virtual Venv, Editor de texto, IDE.
   - 👨‍💻 [Mão na masssa](./src/Conteudo/Start.md)
+    - Iremos começar a codar.
+  - ✔️ [Desafios](./src/Conteudo/Desafios.md)
+    - Teste suas habilidades aqui.
 
 # Contribuições
 

@@ -2,7 +2,7 @@
   <img src="https://miro.medium.com/max/6000/1*Ou6FFJJD3zhcIUU8wBZqIw.png" width="500">
 </p>
 
-# Começo
+# Conteudo
 
 - 2.1 [Hello World](#hello-world)
 - 2.2 [Render Template](#render-template)
@@ -10,7 +10,12 @@
 - 2.4 [HTTP Methods](#http-methods)
 - 2.5 [Redirects and Errors](#redirects-and-errors)
 - 2.6 [File Uploads](#file-uploads)
+- 2.7 [APIs com JSON](#APIs-com-JSON)
+- 2.8 [Cookies](#Cookies)
 
+# Fazendo
+
+- 2.9 [Logging](#Logging)
 
 # Hello World
 
@@ -148,7 +153,55 @@ def page_not_found(error):
     return render_template('404.html'), 404
 ```
 
-# Fazendo.......
-## Olhe aqui amanhã.. :purple_heart:
-## [Me de um feedback.](https://twitter.com/freazesss) :purple_heart:
+# APIs com JSON
+#### Um resposta comum formatar quando escrevemos uma API é JSON. Facil de começar escrevemos tal API com Flask. se você retorna um ``dict`` de um view, isto ira ser convertido em um JSON response.
 
+```py
+@app.route("/")
+def me_api():
+    return {
+        "name": "Gustavo",
+        "sobre_nome": "Lins",
+    }
+```
+
+#### Dependendo do design da sua ``API``, voce quer criar ``JSON responses`` para tipos de outro dict. Nesse caso, utilize a funçao ``jsonify()``, o qual ira serializar um tipo de dado ``JSON`` suportado. Ou iremos olhar em comunidades flask estensoes que suportam aplicaçoes mais complexas.
+
+```py
+@app.route("/")
+def users_api():
+    return jsonify({'Ola' : 'Olin', 'Da' : 'Recife'})
+```
+
+# Cookies
+#### Para acessar os ``cookies`` você pode usar os ``cookies attribute``. Para setar coockies você pode utilizar o ``set_cookie`` metodo de uma resposta de objetos. Os cookies atribuidos de request objects e um dict com todos os cookies o cliente transmite. Se voce quer usar sessioes, nao use os cookies diretamente mas em vez de usar as Sessions no Flask isso adiciona uma segurança no topo dos cookies para voce.
+
+### Lendo os cookies:
+
+```py
+from flask import request
+
+@app.route('/')
+def index():
+    username = request.cookies.get('username')
+    # utilize cookies.get(key) em vez de cookies[key] para nao ter um
+    # KeyError se o cookie esta faltando.
+```
+
+### Guardando os cookies:
+
+```py
+from flask import make_response
+
+@app.route('/')
+def index():
+    resp = make_response(render_template(...))
+    resp.set_cookie('username', 'the username')
+    return resp
+```
+
+#### Note que os cookies são setados em um ``response object`` desde você normalmente so retornar ``string`` de uma ``view function`` O Flask ira converter ele em um ``response object`` para você. Se você quer explicitamente fazer isso você pode utilizar a funcão ``make_response()`` e assim modificar-lo.
+
+#### As vezes você pode querer setar o cookie como um ponto onde o ``response object`` não existe assim. isso é possivel utilizando um ``Deferred Request Callbacks pattern``.
+
+# Logging

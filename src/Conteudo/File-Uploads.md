@@ -1,3 +1,0 @@
-# Fazendo.......
-## Olhe aqui amanhã.. :purple_heart:
-## [Me de um feedback.](https://twitter.com/freazesss) :purple_heart:
