@@ -154,7 +154,7 @@ def page_not_found(error):
 ```
 
 # APIs com JSON
-#### Um resposta comum formatar quando escrevemos uma API é JSON. Facil de começar escrevemos tal API com Flask. se você retorna um ``dict`` de um view, isto ira ser convertido em um JSON response.
+#### Um resposta comum formatar quando escrevemos uma API é JSON. Facil de começar escrevemos tal API com Flask. se você retorna um ``dict`` de um view, isto ira ser convertido em um JSON response.
 
 ```py
 @app.route("/")
