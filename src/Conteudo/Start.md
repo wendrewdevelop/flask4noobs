@@ -2,7 +2,7 @@
   <img src="https://miro.medium.com/max/6000/1*Ou6FFJJD3zhcIUU8wBZqIw.png" width="500">
 </p>
 
-# Conteudo
+# 1° Modulo
 
 - 2.1 [Hello World](#hello-world)
 - 2.2 [Render Template](#render-template)
@@ -12,10 +12,10 @@
 - 2.6 [File Uploads](#file-uploads)
 - 2.7 [APIs com JSON](#APIs-com-JSON)
 - 2.8 [Cookies](#Cookies)
-
-# Fazendo
-
 - 2.9 [Logging](#Logging)
+
+# 2° Modulo
+.....
 
 # Hello World
 
@@ -205,3 +205,18 @@ def index():
 #### As vezes você pode querer setar o cookie como um ponto onde o ``response object`` não existe assim. isso é possivel utilizando um ``Deferred Request Callbacks pattern``.
 
 # Logging
+
+#### Você pode querer fazer um ``log`` quando alguma coisa duvidosa acontecer. Isso esta aqui ``loggers`` vem acessivel. Com o Flask 0.3 e tem um logger preconfigurado para você usar.
+#### Aqui estão alguns exemplos de logs:
+
+```py
+app.logger.debug('Um valor para debugar')
+```
+
+```py
+app.logger.warning('Um aviso aconteceu, (%d apples)', 42)
+```
+
+```py
+app.logger.error('Um error aconteceu.')
+```
