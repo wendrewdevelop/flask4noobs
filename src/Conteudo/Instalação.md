@@ -33,7 +33,7 @@ py -3 -m venv venv
 #### Antes de você trabalhar no seu projeto, ative sua virtual environment com o comando.
 
 ```sh
-. venv/bin/activate
+source venv/bin/activate
 ```
 
 ### No windows
