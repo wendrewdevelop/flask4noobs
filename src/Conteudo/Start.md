@@ -38,7 +38,7 @@ Abra o seu cmd e digite:
 python <nome_do_seu_arquivo>.py
 ```
 
-#### A Saida sera
+A Saida sera:
 
 ```sh
 * Serving Flask app "nome_do_seu_arquivo" (lazy loading)
@@ -81,7 +81,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-	return render_template('home.html')
+ return render_template('home.html')
 
 app.run(debug=True)
 ```
@@ -100,7 +100,7 @@ A Estrutura ficaria:
     /home.html
 ```
 
-# Como ficaria no meu html?
+Como ficaria no meu html?
 
 ```html
 <!DOCTYPE html>
@@ -148,7 +148,7 @@ def login():
     isso_nunca_sera_executado()
 ```
 
-#### Se você quer costumizar o erro da page, você pode usar o decorador ``errorhandler()``:
+Se você quer costumizar o erro da page, você pode usar o decorador ``errorhandler()``:
 
 ```py
 from flask import render_template
@@ -158,7 +158,8 @@ def page_not_found(error):
     return render_template('404.html'), 404
 ```
 
-# APIs com JSON
+## APIs com JSON
+
 Um resposta comum formatar quando escrevemos uma API é JSON. Facil de começar escrevemos tal API com Flask. se você retorna um ``dict`` de um view, isto ira ser convertido em um JSON response.
 
 ```py
@@ -194,7 +195,7 @@ def index():
     # KeyError se o cookie esta faltando.
 ```
 
-### Guardando os cookies:
+### Guardando os cookies
 
 ```py
 from flask import make_response

@@ -113,7 +113,7 @@ sudo pacman -S atom
 
 <img src='https://d3nmt5vlzunoa1.cloudfront.net/pycharm/files/2015/12/PyCharm_400x400_Twitter_logo_white.png' width=120>
 
-### Windows ou MacOs
+#### Windows ou MacOs
 
 [Baixar](https://www.jetbrains.com/pt-br/pycharm/)
 
@@ -131,8 +131,6 @@ sudo snap install pycharm-community --classic
 sudo pacman -S pycharm-community-edition
 ```
 
-##### Caso você saiba de mais alguma que não esteja aqui faça um PR.
-
-- [Proximo](./Start.md)
+Caso você saiba de mais alguma IDE que não esteja aqui faça um PR.
 
 [Inicio](../README.md), [Anterior](./Historia.md), [Proximo](./Start.md)
