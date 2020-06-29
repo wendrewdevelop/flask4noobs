@@ -1,11 +1,6 @@
-<p align="center">
-  <img src="https://miro.medium.com/max/6000/1*Ou6FFJJD3zhcIUU8wBZqIw.png" width="500">
-</p>
+# Flask f4r Noobs
 
-# flask4noobs
-> :memo: Documentação do flask traduzida para PTBR.
-
-# Conteúdo
+## Conteúdo
 
 - 📖 [Historia](./src/Conteudo/Historia.md)
   - 📦 [Instalação](./src/Conteudo/Instalação.md)
@@ -15,7 +10,7 @@
   - ✔️ [Desafios](./src/Conteudo/Desafios.md)
     - Teste suas habilidades aqui.
 
-# Contribuições
+## Contribuições
 
 1. Forke esse repositório.
 2. Crie uma branch com sua feature(``git checkout -b <branch name>``).
@@ -23,7 +18,8 @@
 4. Faça o push(``git push origin branch_name``).
 5. Abra um **Pull request**.
 
-# Autores
+## Autores
+
 **Gustavo Lins** [Github](https://github.com/freazesss/), [Twitter](https://twitter.com/freazesss)
 
-### Feito com o 💜
+Feito com o **💜**

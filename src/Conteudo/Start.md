@@ -1,8 +1,6 @@
-<p align="center">
-  <img src="https://miro.medium.com/max/6000/1*Ou6FFJJD3zhcIUU8wBZqIw.png" width="500">
-</p>
+# Flask f4r Noobs
 
-# 1° Modulo
+## 1° Modulo
 
 - 2.1 [Hello World](#hello-world)
 - 2.2 [Render Template](#render-template)
@@ -14,10 +12,11 @@
 - 2.8 [Cookies](#Cookies)
 - 2.9 [Logging](#Logging)
 
-# 2° Modulo
+## 2° Modulo
+
 .....
 
-# Hello World
+### Hello World
 
 ```py
 from flask import Flask
@@ -26,18 +25,21 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-	return '<h1>Ola Mundo!</h1>'
+ return '<h1>Ola Mundo!</h1>'
 
 app.run(debug=True)
 ```
-## Rodar:
-#### Abra o seu cmd e digite:
+
+## Rodar
+
+Abra o seu cmd e digite:
 
 ```sh
 python <nome_do_seu_arquivo>.py
 ```
 
-#### A Saida sera:
+#### A Saida sera
+
 ```sh
 * Serving Flask app "nome_do_seu_arquivo" (lazy loading)
 * Environment: production
@@ -50,22 +52,23 @@ python <nome_do_seu_arquivo>.py
 * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
 
-## Oque fizemos nesse codigo?
+## Oque fizemos nesse codigo
+
 1. Importamos o Flask do flask
 2. Criamos uma instância dessa class. O Primeiro argumento é o nome da sua Aplicação.
 3. Utilizamos o route para dizer a Url exemplo:
 
-```
+```s
 http://127.0.0.1:5000/
-````
-
-
-# Render Template
-##### Gerar html dentro de python não é legal, Por isso o flask configura o **jinja2 Mecanismo de template** para você...
-##### Renderizar um html. você pode utilizar o metodo **render_template()**.
-##### O Flask ira olhar a pasta **templates/**.
-
 ```
+
+## Render Template
+
+Gerar html dentro de python não é legal, Por isso o flask configura o **jinja2 Mecanismo de template** para você...
+Renderizar um html. você pode utilizar o metodo **render_template()**.
+O Flask ira olhar a pasta **templates/**.
+
+```s
 /<nome_do_seu_arquivo>.py
 /templates
     /home.html
@@ -83,13 +86,13 @@ def homepage():
 app.run(debug=True)
 ```
 
-# Static Files
-##### Aplicações dinamicas web tambem precisam de arquivos staticos. Usamos css e JavaScript. precisamos criar uma pasta chama ``/static``.
-##### Para gerar a Url para arquivos staticos use o ``/static``.
+## Static Files
 
-# A Estrutura ficaria:
+Aplicações dinamicas web tambem precisam de arquivos staticos. Usamos css e JavaScript. precisamos criar uma pasta chama ``/static``.
+Para gerar a Url para arquivos staticos use o ``/static``.
+A Estrutura ficaria:
 
-```
+```s
 /<nome_do_seu_arquivo>.py
 /static
   /style.css
@@ -113,8 +116,9 @@ app.run(debug=True)
 </html>
 ```
 
-# Http Methods
-##### Aplicações Web utilizam difrentes metodos HTTP quando acessam URLs. Você pode se familiarizar com o Metodo HTTP Por padrão, a rota ira responder o ``GET``. Você pode usar o metodo ``route()``. para lidar com difrentes metodos HTTP.
+## Http Methods
+
+Aplicações Web utilizam difrentes metodos HTTP quando acessam URLs. Você pode se familiarizar com o Metodo HTTP Por padrão, a rota ira responder o ``GET``. Você pode usar o metodo ``route()``. para lidar com difrentes metodos HTTP.
 
 ```py
 from flask import request
@@ -127,8 +131,9 @@ def login():
         return volte_para_o_login_formulario()
 ```
 
-# Redirects e Errors
-##### Para redirecionar o usuario para outra html, utilize a função ``redirect()``; para abortar uma requisição antes com um erro de codigo, use a função ``abort()``:
+## Redirects e Errors
+
+Para redirecionar o usuario para outra html, utilize a função ``redirect()``; para abortar uma requisição antes com um erro de codigo, use a função ``abort()``:
 
 ```py
 from flask import abort, redirect, url_for
@@ -154,7 +159,7 @@ def page_not_found(error):
 ```
 
 # APIs com JSON
-#### Um resposta comum formatar quando escrevemos uma API é JSON. Facil de começar escrevemos tal API com Flask. se você retorna um ``dict`` de um view, isto ira ser convertido em um JSON response.
+Um resposta comum formatar quando escrevemos uma API é JSON. Facil de começar escrevemos tal API com Flask. se você retorna um ``dict`` de um view, isto ira ser convertido em um JSON response.
 
 ```py
 @app.route("/")
@@ -165,18 +170,19 @@ def me_api():
     }
 ```
 
-#### Dependendo do design da sua ``API``, voce quer criar ``JSON responses`` para tipos de outro dict. Nesse caso, utilize a funçao ``jsonify()``, o qual ira serializar um tipo de dado ``JSON`` suportado. Ou iremos olhar em comunidades flask estensoes que suportam aplicaçoes mais complexas.
+Dependendo do design da sua ``API``, voce quer criar ``JSON responses`` para tipos de outro dict. Nesse caso, utilize a funçao ``jsonify()``, o qual ira serializar um tipo de dado ``JSON`` suportado. Ou iremos olhar em comunidades flask estensoes que suportam aplicaçoes mais complexas.
 
 ```py
 @app.route("/")
 def users_api():
-    return jsonify({'Ola' : 'Olin', 'Da' : 'Recife'})
+    return jsonify({'Ola' : 'Mundo', 'Lins' : 'Dict'})
 ```
 
-# Cookies
-#### Para acessar os ``cookies`` você pode usar os ``cookies attribute``. Para setar coockies você pode utilizar o ``set_cookie`` metodo de uma resposta de objetos. Os cookies atribuidos de request objects e um dict com todos os cookies o cliente transmite. Se voce quer usar sessioes, nao use os cookies diretamente mas em vez de usar as Sessions no Flask isso adiciona uma segurança no topo dos cookies para voce.
+## Cookies
 
-### Lendo os cookies:
+Para acessar os ``cookies`` você pode usar os ``cookies attribute``. Para setar coockies você pode utilizar o ``set_cookie`` metodo de uma resposta de objetos. Os cookies atribuidos de request objects e um dict com todos os cookies o cliente transmite. Se voce quer usar sessioes, nao use os cookies diretamente mas em vez de usar as Sessions no Flask isso adiciona uma segurança no topo dos cookies para voce.
+
+### Lendo os cookies
 
 ```py
 from flask import request
@@ -200,14 +206,14 @@ def index():
     return resp
 ```
 
-#### Note que os cookies são setados em um ``response object`` desde você normalmente so retornar ``string`` de uma ``view function`` O Flask ira converter ele em um ``response object`` para você. Se você quer explicitamente fazer isso você pode utilizar a funcão ``make_response()`` e assim modificar-lo.
+Note que os cookies são setados em um ``response object`` desde você normalmente so retornar ``string`` de uma ``view function`` O Flask ira converter ele em um ``response object`` para você. Se você quer explicitamente fazer isso você pode utilizar a funcão ``make_response()`` e assim modificar-lo.
 
-#### As vezes você pode querer setar o cookie como um ponto onde o ``response object`` não existe assim. isso é possivel utilizando um ``Deferred Request Callbacks pattern``.
+As vezes você pode querer setar o cookie como um ponto onde o ``response object`` não existe assim. isso é possivel utilizando um ``Deferred Request Callbacks pattern``.
 
-# Logging
+## Logging
 
-#### Você pode querer fazer um ``log`` quando alguma coisa duvidosa acontecer. Isso esta aqui ``loggers`` vem acessivel. Com o Flask 0.3 e tem um logger preconfigurado para você usar.
-#### Aqui estão alguns exemplos de logs:
+Você pode querer fazer um ``log`` quando alguma coisa duvidosa acontecer. Isso esta aqui ``loggers`` vem acessivel. Com o Flask 0.3 e tem um logger preconfigurado para você usar.
+Aqui estão alguns exemplos de logs:
 
 ```py
 app.logger.debug('Um valor para debugar')
