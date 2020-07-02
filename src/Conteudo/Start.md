@@ -1,20 +1,17 @@
 # Flask f4r Noobs
 
-## 1° Modulo
+## Conteudo
 
-- 2.1 [Hello World](#hello-world)
-- 2.2 [Render Template](#render-template)
-- 2.3 [Static Files](#static-files)
-- 2.4 [HTTP Methods](#http-methods)
-- 2.5 [Redirects and Errors](#redirects-and-errors)
-- 2.6 [File Uploads](#file-uploads)
-- 2.7 [APIs com JSON](#APIs-com-JSON)
-- 2.8 [Cookies](#Cookies)
-- 2.9 [Logging](#Logging)
-
-## 2° Modulo
-
-.....
+- 1.1 [Hello World](#hello-world)
+- 1.2 [Render Template](#render-template)
+- 1.3 [Static Files](#static-files)
+- 1.4 [HTTP Methods](#http-methods)
+- 1.5 [Redirects and Errors](#redirects-and-errors)
+- 1.6 [File Uploads](#file-uploads)
+- 1.7 [APIs with JSON](#APIs-with-JSON)
+- 1.8 [Cookies](#Cookies)
+- 1.9 [Logging](#Logging)
+- 2.0 [New...](#New)
 
 ### Hello World
 
@@ -111,7 +108,7 @@ Como ficaria no meu html?
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
   </head>
   <body>
-    <h1>Ola Mundo!</h1>
+    <h1>Olá, Mundo!</h1>
   </body>
 </html>
 ```
@@ -158,7 +155,7 @@ def page_not_found(error):
     return render_template('404.html'), 404
 ```
 
-## APIs com JSON
+## Apis With Json
 
 Um resposta comum formatar quando escrevemos uma API é JSON. Facil de começar escrevemos tal API com Flask. se você retorna um ``dict`` de um view, isto ira ser convertido em um JSON response.
 
@@ -227,3 +224,7 @@ app.logger.warning('Um aviso aconteceu, (%d apples)', 42)
 ```py
 app.logger.error('Um error aconteceu.')
 ```
+
+## New
+
+Sendo feito...
