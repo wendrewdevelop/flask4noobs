@@ -1,4 +1,4 @@
-# Flask f4r noobs
+# Flask4Noobs
 
 ## Instalação
 
