@@ -29,7 +29,7 @@ Aqui estão alguns desafios basicos para você testar suas habilidades. (Obs: N�
 | 02  | ....  |    |
 | 03  | .....  |   |
 
-[Voltar ao Inicio](../README.md)
+[Voltar ao Inicio](.../README.md)
 
 <p align="center">
   <a href="https://github.com/he4rt/4noobs" target="_blank">
