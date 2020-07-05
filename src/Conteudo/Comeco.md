@@ -7,7 +7,7 @@
 
 <p align="center">
   <h2 align="center">Flask4noobs</h2>
-  <h1 align="center"><img src="https://flask.palletsprojects.com/en/1.1.x/_images/flask-logo.png" alt="Flask" width="120"></h1>
+  <h1 align="center"><img src="https://flask.palletsprojects.com/en/1.1.x/_static/flask-icon.png" alt="Flask" width="120"></h1>
   <p align="center">
     <br />
     <a href="https://github.com/freazesss/flask4noobs#ROADMAP"><strong>Explore a documentação »</strong></a>
@@ -18,6 +18,7 @@
     <a href="https://github.com/freazesss/flask4noobs#como-contribuir">Request Feature</a>
   </p>
 </p>
+
 
 
 ## Conteudo
@@ -251,3 +252,9 @@ app.logger.error('Um error aconteceu.')
 ## New
 
 Sendo feito...
+
+<p align="center">
+  <a href="https://github.com/he4rt/4noobs" target="_blank">
+    <img src="https://raw.githubusercontent.com/he4rt/4noobs/master/.github/footer-4noobs.svg" width="380">
+  </a>
+</p>

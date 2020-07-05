@@ -7,7 +7,7 @@
 
 <p align="center">
   <h2 align="center">Flask4noobs</h2>
-  <h1 align="center"><img src="https://flask.palletsprojects.com/en/1.1.x/_images/flask-logo.png" alt="Flask" width="120"></h1>
+  <h1 align="center"><img src="https://flask.palletsprojects.com/en/1.1.x/_static/flask-icon.png" alt="Flask" width="120"></h1>
   <p align="center">
     <br />
     <a href="#ROADMAP"><strong>Explore a documentação »</strong></a>
