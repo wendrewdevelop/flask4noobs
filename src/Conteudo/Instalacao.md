@@ -37,6 +37,8 @@ Use um virtual environment para gerenciar as dependências do seu projeto.
 
 Primeiro precisamos criar uma virtual environment com o comando:
 
+### No linux
+
 ```sh
 python3 -m venv venv
 ```
@@ -51,7 +53,7 @@ py -3 -m venv venv
 
 Antes de você trabalhar no seu projeto, ative sua virtual environment com o comando.
 
-#### No linux
+### No linux
 
 ```sh
 source venv/bin/activate
