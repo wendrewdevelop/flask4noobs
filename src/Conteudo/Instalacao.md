@@ -154,7 +154,7 @@ sudo pacman -S pycharm-community-edition
 
 Caso você saiba de mais alguma IDE que não esteja aqui faça um PR.
 
-[Inicio](../../README.md), [Anterior](./Historia.md), [Proximo](./Start.md)
+[Inicio](../../README.md), [Anterior](./Historia.md), [Proximo](./Comeco.md)
 
 <p align="center">
   <a href="https://github.com/he4rt/4noobs" target="_blank">
