@@ -19,8 +19,6 @@
   </p>
 </p>
 
-
-
 ## Conteudo
 
 - 1.1 [Hello World](#hello-world)
@@ -50,13 +48,13 @@ app.run(debug=True)
 
 ## Rodar
 
-Abra o seu cmd e digite:
+Abra o seu cmd ou terminal e digite:
 
 ```sh
 python <nome_do_seu_arquivo>.py
 ```
 
-A Saida sera:
+A Saida será:
 
 ```sh
 * Serving Flask app "nome_do_seu_arquivo" (lazy loading)
@@ -106,8 +104,8 @@ app.run(debug=True)
 
 ## Static Files
 
-Aplicações dinamicas web tambem precisam de arquivos staticos. Usamos css e JavaScript. precisamos criar uma pasta chama ``/static``.
-Para gerar a Url para arquivos staticos use o ``/static``.
+Aplicações dinamicas web tambem precisam de arquivos estaticos. Usamos css e JavaScript. precisamos criar uma pasta chamada ``static``.
+Para gerar a Url para arquivos estaticos use o ``/static``.
 A Estrutura ficaria:
 
 ```s
@@ -118,7 +116,7 @@ A Estrutura ficaria:
     /home.html
 ```
 
-Como ficaria no meu html?
+Como ficaria a chamada do arquivo?
 
 ```html
 <!DOCTYPE html>
@@ -134,9 +132,9 @@ Como ficaria no meu html?
 </html>
 ```
 
-## Http Methods
+## **HTTP** Methods
 
-Aplicações Web utilizam difrentes metodos HTTP quando acessam URLs. Você pode se familiarizar com o Metodo HTTP Por padrão, a rota ira responder o ``GET``. Você pode usar o metodo ``route()``. para lidar com difrentes metodos HTTP.
+Aplicações Web utilizam diferentes metodos **HTTP** quando acessam URLs. Você pode se familiarizar com o Metodo **HTTP** Por padrão a rota ira retornar o ``GET``. Você pode usar o metodo ``route()``. para lidar com diferentes metodos **HTTP**.
 
 ```py
 from flask import request
@@ -166,7 +164,7 @@ def login():
     isso_nunca_sera_executado()
 ```
 
-Se você quer costumizar o erro da page, você pode usar o decorador ``errorhandler()``:
+Se você quer costumizar o erro da pagina, você pode usar o decorador ``errorhandler()``:
 
 ```py
 from flask import render_template
@@ -177,6 +175,7 @@ def page_not_found(error):
 ```
 
 ## File Uploads
+
 ...
 
 ## Apis With Json
@@ -202,7 +201,7 @@ def users_api():
 
 ## Cookies
 
-Para acessar os ``cookies`` você pode usar os ``cookies attribute``. Para setar coockies você pode utilizar o ``set_cookie`` metodo de uma resposta de objetos. Os cookies atribuidos de request objects e um dict com todos os cookies o cliente transmite. Se voce quer usar sessioes, nao use os cookies diretamente mas em vez de usar as Sessions no Flask isso adiciona uma segurança no topo dos cookies para voce.
+Para acessar os ``cookies`` você pode usar os ``cookies attribute``. Para definir os cookies você pode utilizar o metodo ``set_cookie``. Os São cookies atribuidos em um request objects e em um dict com todos os cookies o cliente transmite. Se voce quer usar sessões, não use os cookies diretamente mas em vez de usar as sessions no Flask isso adiciona uma segurança no topo dos cookies para voce.
 
 ### Lendo os cookies
 
@@ -228,13 +227,13 @@ def index():
     return resp
 ```
 
-Note que os cookies são setados em um ``response object`` desde você normalmente so retornar ``string`` de uma ``view function`` O Flask ira converter ele em um ``response object`` para você. Se você quer explicitamente fazer isso você pode utilizar a funcão ``make_response()`` e assim modificar-lo.
+Note que os cookies são definidos em um ``response object`` desde você normalmente so retornar ``string`` de uma ``view function`` O Flask ira converter ele em um ``response object`` para você. Se você quer explicitamente fazer isso você pode utilizar a funcão ``make_response()`` e assim modificar-lo.
 
-As vezes você pode querer setar o cookie como um ponto onde o ``response object`` não existe assim. isso é possivel utilizando um ``Deferred Request Callbacks pattern``.
+As vezes você pode querer definir o cookie como um ponto onde o ``response object`` não existe assim. isso é possivel utilizando um ``Deferred Request Callbacks pattern``.
 
 ## Logging
 
-Você pode querer fazer um ``log`` quando alguma coisa duvidosa acontecer. Isso esta aqui ``loggers`` vem acessivel. Com o Flask 0.3 e tem um logger preconfigurado para você usar.
+Você pode querer fazer um ``log`` quando alguma coisa duvidosa acontecer. Para Isso os ``loggers`` estão aqui, eles vem acessivel. O Flask ja vem com um logger preconfigurado para você usar.
 Aqui estão alguns exemplos de logs:
 
 ```py
