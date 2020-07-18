@@ -25,22 +25,22 @@
 
 ## ROADMAP
 
-- [Historia](./src/Conteudo/Historia.md/)
-- [Instalação](./src/Conteudo/Instalacao.md/)
-  - [Editor de textos/IDES](https://github.com/freazesss/flask4noobs/blob/Remake-Basico/src/Conteudo/Instala%C3%A7%C3%A3o.md#editor-de-textosides)
-  - [Virtual Env](https://github.com/freazesss/flask4noobs/blob/Remake-Basico/src/Conteudo/Instala%C3%A7%C3%A3o.md#venv)
-  - [Instalação do Flask](https://github.com/freazesss/flask4noobs/blob/Remake-Basico/src/Conteudo/Instala%C3%A7%C3%A3o.md#instalar-o-flask)
-- [Começo](./src/Conteudo/Comeco.md)
-  - 1.1 [Hello World](https://github.com/freazesss/flask4noobs/blob/master/src/Conteudo/Start.md#hello-world)
-  - 1.2 [Render Template](https://github.com/freazesss/flask4noobs/blob/master/src/Conteudo/Start.md#render-template)
-  - 1.3 [Static Files](https://github.com/freazesss/flask4noobs/blob/master/src/Conteudo/Start.md#static-files)
-  - 1.4 [HTTP Methods](https://github.com/freazesss/flask4noobs/blob/master/src/Conteudo/Start.md#http-methods)
-  - 1.5 [Redirects and Errors](https://github.com/freazesss/flask4noobs/blob/master/src/Conteudo/Start.md#redirects-e-errors)
-  - 1.6 [File Uploads](https://github.com/freazesss/flask4noobs/blob/master/src/Conteudo/Start.md#file-uploads)
-  - 1.7 [APIs with JSON](https://github.com/freazesss/flask4noobs/blob/master/src/Conteudo/Start.md#APIs-with-JSON)
-  - 1.8 [Cookies](https://github.com/freazesss/flask4noobs/blob/master/src/Conteudo/Start.md#Cookies)
-  - 1.9 [Logging](https://github.com/freazesss/flask4noobs/blob/master/src/Conteudo/Start.md#Logging)
-  - 2.0 [New...](https://github.com/freazesss/flask4noobs/blob/master/src/Conteudo/Start.md#New)
+- [Historia](./4noobsDocs/1-Historia.md)
+- [Instalação](./4noobsDocs/2-Instalacao.md)
+  - [Editor de textos/IDES](./4noobsDocs/2-Instalacao.md#editor-de-textosides)
+  - [Virtual Env](./4noobsDocs/2-Instalacao.md#venv)
+  - [Instalação do Flask](./4noobsDocs/2-Instalacao.md#instalar-o-flask)
+- [Começo](./4noobsDocs/3-Comeco.md)
+  - 1.1 [Hello World](./4noobsDocs/3-Comeco.md#hello-world)
+  - 1.2 [Render Template](./4noobsDocs/3-Comeco.md#render-template)
+  - 1.3 [Static Files](./4noobsDocs/3-Comeco.md#static-files)
+  - 1.4 [HTTP Methods](./4noobsDocs/3-Comeco.md#http-methods)
+  - 1.5 [Redirects and Errors](./4noobsDocs/3-Comeco.md#redirects-e-errors)
+  - 1.6 [File Uploads](./4noobsDocs/3-Comeco.md#file-uploads)
+  - 1.7 [APIs with JSON](./4noobsDocs/3-Comeco.md#APIs-with-JSON)
+  - 1.8 [Cookies](./4noobsDocs/3-Comeco.md#Cookies)
+  - 1.9 [Logging](./4noobsDocs/3-Comeco.md#Logging)
+  - 2.0 [New...](./4noobsDocs/3-Comeco.md#New)
   
 ## Como Contribuir
 
