@@ -1,7 +1,7 @@
 
 <p align="center">
   <a href="https://github.com/he4rt/4noobs" target="_blank">
-    <img src="https://raw.githubusercontent.com/he4rt/4noobs/master/.github/header-4noobs.svg">
+    <img src="../4noobsAssets/header_4noobs.svg">
   </a>
 </p>
 
@@ -27,8 +27,9 @@ O Flask foi criado por **Armin Ronacher** em 1 de abril de 2010.
 
 [Inicio](../README.md), [Anterior](../README.md), [Proximo](./2-Instalacao.md)
 
+
 <p align="center">
   <a href="https://github.com/he4rt/4noobs" target="_blank">
-    <img src="https://raw.githubusercontent.com/he4rt/4noobs/master/.github/footer-4noobs.svg" width="380">
+    <img src="../4noobsAssets/footer_4noobs.svg" width="380">
   </a>
 </p>
