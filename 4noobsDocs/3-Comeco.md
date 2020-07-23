@@ -82,9 +82,7 @@ http://127.0.0.1:5000/
 
 ## Render Template
 
-Gerar html dentro de python não é legal, Por isso o flask configura o **jinja2 Mecanismo de template** para você...
-Renderizar um html. você pode utilizar o metodo **render_template()**.
-O Flask ira olhar a pasta **templates/**.
+Gerar html dentro de python não é legal, Por isso o flask configura o **jinja2 Mecanismo de template** para você renderizar um html. Você pode utilizar o metodo **render_template()**. O Flask ira procurar o arquivo "html" na pasta **templates/**.
 
 ```s
 /<nome_do_seu_arquivo>.py
@@ -106,12 +104,12 @@ app.run(debug=True)
 
 ## Static Files
 
-Aplicações dinamicas web tambem precisam de arquivos staticos. Usamos css e JavaScript. precisamos criar uma pasta chama ``/static``.
-Para gerar a Url para arquivos staticos use o ``/static``.
-A Estrutura ficaria:
+Aplicações dinâmicas web também precisam de arquivos estáticos. Usamos **css** e **javascript**. precisamos criar uma pasta chamada ``/static``. Para gerar a **URL** para arquivos estáticos use o ``/static``.
+A Estrutura dos arquivos ficaria:
 
 ```s
 /<nome_do_seu_arquivo>.py
+
 /static
   /style.css
 /templates
@@ -136,7 +134,7 @@ Como ficaria no meu html?
 
 ## Http Methods
 
-Aplicações Web utilizam difrentes metodos HTTP quando acessam URLs. Você pode se familiarizar com o Metodo HTTP Por padrão, a rota ira responder o ``GET``. Você pode usar o metodo ``route()``. para lidar com difrentes metodos HTTP.
+Aplicações Web utilizam diferentes métodos HTTP quando acessam URLS. Você pode se familiarizar com o Método HTTP, Por padrão a rota ira retornar ``GET``. Você pode usar o método ``route()``. para lidar com diferentes métodos HTTP.
 
 ```py
 from flask import request
@@ -151,7 +149,7 @@ def login():
 
 ## Redirects e Errors
 
-Para redirecionar o usuario para outra html, utilize a função ``redirect()``; para abortar uma requisição antes com um erro de codigo, use a função ``abort()``:
+Para redirecionar o usuário para outra pagina **html**, utilize a função ``redirect()``; para abortar uma requisição antes com um erro de codigo, use a função ``abort()``:
 
 ```py
 from flask import abort, redirect, url_for
@@ -166,7 +164,7 @@ def login():
     isso_nunca_sera_executado()
 ```
 
-Se você quer costumizar o erro da page, você pode usar o decorador ``errorhandler()``:
+Se você quer customizar o erro da pagina, você pode usar o **decorador** ``errorhandler()``:
 
 ```py
 from flask import render_template
@@ -181,28 +179,31 @@ def page_not_found(error):
 
 ## Apis With Json
 
-Um resposta comum formatar quando escrevemos uma API é JSON. Facil de começar escrevemos tal API com Flask. se você retorna um ``dict`` de um view, isto ira ser convertido em um JSON response.
+Um resposta comum formatar quando escrevemos uma API é JSON. Facil de começar escrevemos tal API com Flask. se você retorna um ``dict`` de uma view, isto ira ser convertido em um JSON response.
 
 ```py
 @app.route("/")
 def me_api():
     return {
-        "name": "Gustavo",
-        "sobre_nome": "Lins",
+        "Name": "Gustavo",
+        "Job": "Back End",
     }
 ```
 
-Dependendo do design da sua ``API``, voce quer criar ``JSON responses`` para tipos de outro dict. Nesse caso, utilize a funçao ``jsonify()``, o qual ira serializar um tipo de dado ``JSON`` suportado. Ou iremos olhar em comunidades flask estensoes que suportam aplicaçoes mais complexas.
+Dependendo do design da sua ``API``, voce quer criar ``JSON responses`` para outros tipos de dict. Nesse caso, utilize a função ``jsonify()``, o qual ira serializar um tipo de dado ``JSON`` suportado. Ou iremos olhar em comunidades flask extensões que suportam aplicaçoes mais complexas.
 
 ```py
 @app.route("/")
 def users_api():
-    return jsonify({'Ola' : 'Mundo', 'Lins' : 'Dict'})
+    return jsonify({
+    'Ola' : 'Mundo',
+    'Lins' : 'Dict'
+    })
 ```
 
 ## Cookies
 
-Para acessar os ``cookies`` você pode usar os ``cookies attribute``. Para setar coockies você pode utilizar o ``set_cookie`` metodo de uma resposta de objetos. Os cookies atribuidos de request objects e um dict com todos os cookies o cliente transmite. Se voce quer usar sessioes, nao use os cookies diretamente mas em vez de usar as Sessions no Flask isso adiciona uma segurança no topo dos cookies para voce.
+Para acessar os ``cookies`` você pode usar os ``cookies attribute``. Para setar cookies você pode utilizar o ``set_cookie`` metodo de uma resposta de objetos. Os cookies atribuidos de request objects e um dict com todos os cookies o cliente transmite. Se voce quer usar sessioes, nao use os cookies diretamente mas em vez de usar as Sessions no Flask isso adiciona uma segurança no topo dos cookies para voce.
 
 ### Lendo os cookies
 
@@ -212,7 +213,8 @@ from flask import request
 @app.route('/')
 def index():
     username = request.cookies.get('username')
-    # utilize cookies.get(key) em vez de cookies[key] para nao ter um
+
+    # utilize cookies.get(key) em vez de cookies[key] para não ter um
     # KeyError se o cookie esta faltando.
 ```
 
