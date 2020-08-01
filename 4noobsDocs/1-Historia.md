@@ -24,7 +24,7 @@
 
 Flask é um micro-framework web escrito em python e baseado na biblioteca WSGI Werkzeug e na biblioteca de Jinja2, criado por **Armin Ronacher** em 1 de abril de 2010.
 
-[Inicio](../README.md), [Anterior](../README.md), [Proximo](./2-Instalacao.md)
+[Início](../README.md), [Próximo](./2-Instalacao.md)
 
 
 <p align="center">

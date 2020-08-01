@@ -255,6 +255,8 @@ app.logger.error('Um error aconteceu.')
 
 Sendo feito...
 
+[Início](../README.md), [Anterior](./2-Instalacao.md), [Próximo](./4-Desafios.md)
+
 
 <p align="center">
   <a href="https://github.com/he4rt/4noobs" target="_blank">
