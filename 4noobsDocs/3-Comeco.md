@@ -175,7 +175,199 @@ def page_not_found(error):
 ```
 
 ## File Uploads
-...
+
+##### Requirements
+- Instale o framework flask: _pip install flask_
+
+##### Passo a passo
+
+Para começarmos iremos criar uma pasta com o nome _UploadFiles_ e dentro dela criaremos nosso ambiente virtual, usando o comando _virtualenv -p python3 venv_ (caso você tenha somente a versão 3 do python no sistema operacional, basta fazer: _virtualenv venv_). Depois disso, ainda dentro da pasta _UploadFiles_, iremos criar um arquivo chamado _app.py_, o qual irá conter nosso codigo fonte, e além disso, criaremos uma outra pasta com o nome _templates_, que terá dentro dela o arquivo _index.html_, o qual irá conter nosso formulário html que fará o upload do arquivo.
+
+- Nossa estrutura de pastas ficará assim:
+```
+-> UploadFiles/
+    -> templates/
+        -> index.html
+    -> app.py
+```
+
+Agora, ja podemos começar e escrever nosso código, começando pela importação dos métodos que usaremos.
+
+```python
+
+    from flask import Flask, request, render_template, url_for, redirect, flash
+    from werkzeug.utils import secure_filename
+```
+
+Do flask, importamos a própria classe do framework, o método _request_, *render_template*, *url_for*, _redirect_ e _flash_.
+
+A proxima importação é da biblioteca __Werkzeug__ que, basicamente, é uma biblioteca abrangente de aplicativos da Web com varios utilitários.
+
+Importamos o método **secure_filename()**, que tem como objetivo prevenir inserção de arquivos protegidos, ou que o usuário tente inserir dados incorretos/falsificados no formulário de upload.
+
+Na sequencia, iremos declarar nosso método _Flask_ e definir uma secret_key (obrigatório para realizar qualquer requisição em formulários, utilizando flask):
+
+```python
+
+    app = Flask(__name__)
+    app.secret_key = b'set_your_secret_key_here'
+```
+
+Com nosso Objeto _Flask()_ declarado e nossa *secret_key* definida, vamos criar nossa rota para a página do formulário:
+
+```python
+
+    @app.route('/', methods=['GET', 'POST'])
+    def upload_file():
+        return render_template('index.html')
+```
+
+- Nesse trecho de código definimos a URL de acesso da nossa rota: *localhost:5000/*;
+- definimos os métodos de requisição aceitos nessa pagina: *methods=['GET', 'POST']*;
+- Criamos a função *upload_file()*, que retorna o template da nossa página.
+
+Repare na ultima linha desse trecho, que citamos o arquivo *index.html*, nós ja criamos (foi criado no começo desse tópico), mas ainda esta em branco. Por ser um tutorial sem foco no frontend, usaremos o seguinte trecho html:
+
+```html
+
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <title>Flask File Uploads</title>
+   </head>
+   <body>
+      <h1 class="text-center">Flask File Upload Form</h1><hr>
+      <form action="{{url_for('upload_file')}}" method="POST" enctype="multipart/form-data">
+         <label for="filefield" class="ml-2">File Field:</label>
+         <input type="file" class="form-control col-sm-6 ml-2" name="filefield" id="filefield"><br>
+         <button type="submit" class="btn btn-outline-info ml-2">Submit File</button>
+      </form><hr>
+      {% with messages = get_flashed_messages() %}
+         {% if messages %}
+            {% for message in messages %}
+               <div class="alert alert-light" role="alert">
+                  {{ message }}
+               </div>
+            {% endfor %}
+         {% endif %}
+      {% endwith %}
+   </body>
+</html>
+```
+
+- Nosso formulário é basico, composto apenas por um _input field_, definido como _type=file_;
+
+- No trecho de código abaixo, usamos o método _flash()_, importado no nosso backend. Basicamente, se for retornado algum erro, o sistema irá mostrar no frontend a mensagem retornada pelo flask:
+```html
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-light" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+```
+
+Com nossa rota e nosso html prontos, ja podemos complementar o nossa função __upload_files()__ para realizar submit do formulário e, consequentemente, o uplaod do nosso arquivo. Por fim, nossa função completa ficará assim:
+
+```python
+
+@app.route('/', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        f = request.files['filefield']
+        f.save('/home/wendrew/Documentos/Projetos/UploadFiles/src/' + secure_filename(f.filename))
+        flash('File uploaded successfully.')
+        return redirect(url_for('upload_file'))
+
+    return render_template('index.html')
+```
+
+- Adicionamos uma condição que verifica se o método enviado no submit do formulãrio foi _POST_;
+- Criamos uma variavel (f) que recebe uma requisição de um arquivo qualquer e com essa mesma variavel, definimos onde iremos salvar o arquivo e utilizamos o método *secure_filename()* para garantir que tudo ocorra bem no upload do arquivo:
+
+```python
+
+    f = request.files['filefield']
+    f.save('/home/wendrew/Documentos/Projetos/UploadFiles/src/' + secure_filename(f.filename))
+```
+
+- Quanto ao local onde salvaremos nosso arquivo, criaremos uma pasta dentro do nosso diretorio raiz do projeto, com o nome _src_.
+
+Por fim, adicionaremos o trecho de código abaixo:
+
+```python
+
+    if __name__ == "__main__":
+        app.run(debug = True)
+```
+
+Nosso código final ficará da seguinte forma:
+
+**App**
+```python
+
+    from flask import Flask, request, render_template, request, url_for, redirect, flash
+    from werkzeug.utils import secure_filename
+
+
+    app = Flask(__name__)
+    app.secret_key = b'set_your_secret_key_here'
+
+    @app.route('/', methods=['GET', 'POST'])
+    def upload_file():
+        if request.method == 'POST':
+            f = request.files['filefield']
+            f.save('/home/wendrew/Documentos/Projetos/UploadFiles/src/' + secure_filename(f.filename))
+            flash('File uploaded successfully.')
+            return redirect(url_for('upload_file'))
+        return render_template('index.html')
+
+
+    if __name__ == "__main__":
+        app.run(debug = True)
+```
+
+**Html**
+```html
+
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <title>Flask File Uploads</title>
+   </head>
+   <body>
+      <h1 class="text-center">Flask File Upload Form</h1><hr>
+      <form action="{{url_for('upload_file')}}" method="POST" enctype="multipart/form-data">
+         <label for="filefield" class="ml-2">File Field:</label>
+         <input type="file" class="form-control col-sm-6 ml-2" name="filefield" id="filefield"><br>
+         <button type="submit" class="btn btn-outline-info ml-2">Submit File</button>
+      </form><hr>
+      
+   </body>
+</html>
+```
+
+E, nossa disposição de pastas ficará assim:
+
+```
+-> UploadFiles/
+    -> src/ (Local onde nosso aquivo será salvo)
+    -> templates/
+        -> index.html
+    -> app.py
+```
 
 ## Apis With Json
 
